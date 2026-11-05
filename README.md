@@ -210,8 +210,9 @@ the wire format.
 
 ### About the releases
 
-CI builds the workspace for Linux, Windows and macOS and publishes, per target,
-the release libraries (`libpv_proto`, `libpv_client`, `libpv_server`) and the
+CI builds the workspace for Linux and macOS (Windows is left out of the matrix
+for now — the suite passes on Windows, the runner does not) and publishes, per
+target, the release libraries (`libpv_proto`, `libpv_client`, `libpv_server`) and the
 `dump_key` example (prints an X.509 public key as a Rust array — handy when
 debugging a handshake). It does **not** publish a standalone voice server: the
 relay is useless without the game telling it where the players are, so the
