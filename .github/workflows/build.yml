@@ -85,7 +85,13 @@ jobs:
           mkdir -p "${stage}/bin" "${stage}/lib"
           cp "target/release/examples/dump_key${exe}" "${stage}/bin/"
           for crate in pv_proto pv_client pv_server; do
-            cp "target/release/lib${crate}.rlib" "${stage}/lib/"
+            # MSVC names a library pv_proto.rlib; the GNU and Apple toolchains
+            # prefix it with lib.
+            if [ -f "target/release/lib${crate}.rlib" ]; then
+              cp "target/release/lib${crate}.rlib" "${stage}/lib/"
+            else
+              cp "target/release/${crate}.rlib" "${stage}/lib/"
+            fi
           done
           cp LICENSE README.md "${stage}/"
 
