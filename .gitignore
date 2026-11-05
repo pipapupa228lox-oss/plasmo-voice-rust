@@ -1,0 +1,36 @@
+# Rust build output
+/target/
+**/*.rs.bk
+*.pdb
+
+# Prepared game files / local resources (never publish Minecraft data)
+.local/
+resources/
+
+# Voice server state written at runtime
+voice_mutes.json
+server.properties
+languages/.crowdin/
+
+# Build artifacts of the engine and the launcher, if one is copied here
+*.hnmod
+*.zip
+*.tar.gz
+dist/
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.code-workspace
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local notes and secrets
+.env
+.env.*

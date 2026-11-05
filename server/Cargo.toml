@@ -1,0 +1,16 @@
+[package]
+name = "pv-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "PlasmoVoice server: the UDP relay and the plasmo:voice/v2 handshake a Horizon server drives"
+
+[dependencies]
+pv-proto = { path = "../proto" }
+# `PlayerInfoPacket.publicKey` is an X.509 RSA key and `ConfigPacket`'s AES key
+# goes back `RSA/ECB/PKCS1Padding`-wrapped, as the Java server does it.
+rsa = "0.9"
+# Frames the relay produces itself (a static source's audio) are sealed with
+# the same key the clients hold: AES/CBC/PKCS5, as `pv-client`'s crypto.rs.
+aes = "0.8"
+cbc = { version = "0.1", features = ["alloc"] }

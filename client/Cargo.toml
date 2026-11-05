@@ -1,0 +1,21 @@
+[package]
+name = "pv-client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "PlasmoVoice client: UDP audio transport, session state and Opus"
+
+[dependencies]
+pv-proto = { path = "../proto" }
+audiopus = { version = "0.3.0-rc.0", optional = true }
+rsa = "0.9"
+# The server always encrypts the audio payload: AES/CBC/PKCS5 under a key it
+# wraps with RSA (crypto.rs).
+aes = "0.8"
+cbc = { version = "0.1", features = ["alloc"] }
+cpal = { version = "0.16", optional = true }
+
+[features]
+default = ["opus"]
+opus = ["dep:audiopus"]
+device = ["dep:cpal"]

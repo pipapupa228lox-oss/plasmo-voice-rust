@@ -1,0 +1,65 @@
+# The same file in Russian, key for key: a server that sets
+# `voice-default-language=ru_ru` (or a client whose Minecraft is in Russian,
+# unless `voice-forced-language` says otherwise) is answered with these.
+#
+# Java gets this file from Crowdin, which the relay does not download; it ships
+# here instead. Edit it, or add a language of your own, and the relay merges
+# your file over the one it was built with — a key you leave out stays English.
+
+[server.pv.error]
+no_permissions = "&cИзвините, у вас нет прав на выполнение этой команды. Обратитесь к администраторам сервера, если считаете, что это ошибка."
+player_only_command = "Эту команду может выполнить только игрок"
+player_not_found = "Игрок не найден"
+mod_missing_kick_message = """
+Извините, для игры на этом сервере нужен мод Plasmo Voice.
+Скачать: https://modrinth.com/plugin/plasmo-voice"""
+version_not_supported = "Извините, ваша версия Plasmo Voice на этом сервере не поддерживается. %s"
+version_not_supported_click = "Скачать поддерживаемую версию"
+version_not_supported_hover = "%s"
+
+[server.pv.mutes]
+empty_reason = "не указана"
+temporarily_muted = "Вам запрещено говорить %1$s. Причина: %2$s"
+permanently_muted = "Вам запрещено говорить навсегда. Причина: %s"
+unmuted = "С вас снят мут"
+
+  [server.pv.mutes.durations]
+  seconds = "на %s с"
+  minutes = "на %s мин"
+  hours = "на %s ч"
+  days = "на %s д"
+  weeks = "на %s нед"
+
+[server.pv.command.mute]
+usage = "Использование: /vmute <игрок> [длительность] [причина]"
+already_muted = "%s уже заглушен"
+temporarily_muted = "Заглушен %1$s %2$s. Причина: %3$s"
+permanently_muted = "%1$s заглушен навсегда. Причина: %2$s"
+
+[server.pv.command.unmute]
+usage = "Использование: /vunmute <игрок>"
+not_muted = "%s не заглушен"
+unmuted = "Снят мут с %s"
+
+[server.pv.command.mute_list]
+header = "Заглушенные игроки:"
+entry = "%1$s, до: %2$s. Причина: %3$s"
+entry_muted_by = "%1$s, заглушил %2$s, до: %3$s. Причина: %4$s"
+empty = "Заглушенных игроков нет"
+expire_at = "%1$s в %2$s"
+never_expires = "никогда"
+expiration_date = "yyyy.MM.dd"
+expiration_time = "HH:mm:ss"
+
+[server.pv.command.list]
+message = "Клиенты (%1$s/%2$s): %3$s"
+empty = "нет игроков с Plasmo Voice"
+
+[server.pv.command.reconnect]
+message = "Пакет переподключения отправлен"
+
+[server.pv.command.reload]
+message = "Конфиг перезагружен"
+
+[client.pv.activation]
+proximity = "Близость"
